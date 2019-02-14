@@ -1,2 +1,8 @@
-<h1>Doses#edit</h1>
-<p>Find me in app/views/doses/edit.html.erb</p>
+<h1>Edit a dose of <%= @cocktail.name %></h1>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+	<%= f.association :ingredient %>
+	<%= f.input :description %>
+	<%= f.submit "Update this dose", class: "btn btn-primary" %>
+<% end %>
+
+<p><%= link_to 'Delete', edit_cocktail_path(@dose), method: :delete %></p>
