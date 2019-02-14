@@ -68,3 +68,5 @@ gem 'simple_form'
 gem 'figaro'
 
 gem 'cloudinary', '~> 1.9.1'
+
+gem 'carrierwave', '~> 1.2'
