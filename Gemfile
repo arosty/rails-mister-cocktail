@@ -65,4 +65,6 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
 
 # For secret keys
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'figaro'
+
+gem 'cloudinary', '~> 1.9.1'
