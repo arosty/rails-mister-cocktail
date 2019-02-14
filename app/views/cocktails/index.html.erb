@@ -2,12 +2,22 @@
   <div class="container">
     <h1 class="flash">Beer Beer Beer.</h1>
     <h2>Apperently there is more than that.</h2>
-    <p>Find out at your_cocktail_path</p>
+    <p><br/>Find out at your_cocktail_path</p>
   </div>
 </div>
-<h1>All cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-	<h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-	<p>(<%= link_to 'Edit', edit_cocktail_path(cocktail) %>)</p>
-<% end %>
-<%= link_to '+ Add a cocktail', new_cocktail_path %>
+<div class="container">
+  <h1>All cocktails</h1>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-md-6">
+        <div class="card" style="background-image: url(<% cocktail.photo.file ? cocktail.photo.to_s : 'https://res.cloudinary.com/dlzrglvrz/image/upload/v1550158621/uhj0h4zco6qaur0kc7th.png'%>);">
+          <%= cl_image_tag cocktail.photo, height: 100, width: 100, crop: :fill %>
+          <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+          <p>(<%= link_to 'Edit', edit_cocktail_path(cocktail) %>)</p>
+        </div>
+      </div>
+    <% end %>
+      <%= link_to '+ Add a cocktail', new_cocktail_path %>
+    </div>
+  </div>
+</div>
